@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Sodería</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/modals.css">
+</head>
+
+<body class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Sodería</h1>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#" class="nav-link active" data-section="resumen">Resumen</a></li>
+                <li><a href="#" class="nav-link" data-section="clientes">Clientes</a></li>
+                <li><a href="#" class="nav-link" data-section="productos">Productos</a></li>
+                <li><a href="#" class="nav-link" data-section="pedidos">Pedidos</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <span id="userName">Usuario</span>
+            <button id="logoutBtn" class="btn-logout">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="content-header">
+            <h2 id="sectionTitle">Resumen</h2>
+        </header>
+
+        <!-- Resumen Section -->
+        <section id="resumenSection" class="content-section active">
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3>Total Clientes</h3>
+                    <p id="totalClientes">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Productos</h3>
+                    <p id="totalProductos">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pedidos Pendientes</h3>
+                    <p id="pedidosPendientes">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Ventas del Mes</h3>
+                    <p id="ventasMes">$0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clientes Section -->
+        <section id="clientesSection" class="content-section">
+            <div class="section-header">
+                <button class="btn-primary" id="newClienteBtn">Nuevo Cliente</button>
+            </div>
+            <div class="table-container">
+                <table class="data-table" id="clientesTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Productos Section -->
+        <section id="productosSection" class="content-section">
+            <div class="section-header">
+                <button class="btn-primary" id="newProductoBtn">Nuevo Producto</button>
+            </div>
+            <div class="table-container">
+                <table class="data-table" id="productosTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Pedidos Section -->
+        <section id="pedidosSection" class="content-section">
+            <div class="section-header">
+                <button class="btn-primary" id="newPedidoBtn">Nuevo Pedido</button>
+            </div>
+            <div class="table-container">
+                <table class="data-table" id="pedidosTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales para formularios -->
+    <div id="modalOverlay" class="modal-overlay"></div>
+
+    <script src="js/services/api.js"></script>
+    <script src="js/utils/modal.js"></script>
+    <script src="js/modules/clientes.js"></script>
+    <script src="js/modules/productos.js"></script>
+    <script src="js/modules/pedidos.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
